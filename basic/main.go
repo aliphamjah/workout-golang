@@ -7,6 +7,7 @@ func main() {
 	helloWord()
 	variable()
 	typedata()
+	constdata()
 }
 
 func helloWord()  {
@@ -19,7 +20,7 @@ func helloWord()  {
 
     	fmt.Println("Hello ", firstName, lastName, ",", greeting)
 
-	fmt.Println("\n")
+	fmt.Println()
 }
 
 func variable()  {
@@ -37,11 +38,11 @@ func variable()  {
 	fmt.Println(one, isFriday, twoPointTwo, say)
 	fmt.Println(name)
 
-	fmt.Println("\n")
+	fmt.Println()
 }
 
 func typedata()  {
-	fmt.Println("-> variable")
+	fmt.Println("-> type data")
 
 	var positiveNumber uint8 = 89
 	var negativeNumber = -1243423644
@@ -58,5 +59,26 @@ func typedata()  {
 	var message string = "Halo"
 	fmt.Printf("message: %s \n", message)
 
-	fmt.Println("\n")
+	fmt.Println()
+}
+
+func constdata()  {
+	fmt.Println("-> const data")
+
+	const firstName string = "john"
+	fmt.Print("halo ", firstName, "!\n")
+
+	// type interface
+	const lastName = "wick"
+	fmt.Print("nice to meet you ", lastName, "!\n")
+
+	// multiple const
+	const (
+		square          = "kotak"
+		isToday bool    = true
+		sekarang
+		numeric uint8   = 1
+		floatNum        = 2.2
+	)
+	const three, four string = "tiga", "empat"
 }
