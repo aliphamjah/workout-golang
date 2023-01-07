@@ -10,6 +10,8 @@ func main() {
 	constdata()
 	operator()
 	conditional()
+	looping()
+	arrayData()
 }
 
 func helloWord()  {
@@ -195,6 +197,118 @@ func conditional()  {
 			}
 		}
 	}
+
+	fmt.Println()
+}
+
+func looping()  {
+	fmt.Println("-> looping")
+
+	// basic
+	fmt.Println("> basic")
+	for i := 0; i < 5; i++ {
+		fmt.Println("Angka", i)
+	}
+
+	// for keyword
+	fmt.Println("> for keyword")
+	var i = 0
+	for i < 5 {
+		fmt.Println("Angka", i)
+		i++
+	}
+
+	// for keyword with break
+	fmt.Println("> for keyword with break")
+	i = 0
+	for {
+		fmt.Println("Angka", i)
+
+		i++
+		if i == 5 {
+			break
+		}
+	}
+
+	// break & continue keyword
+	fmt.Println("> break & continue keyword")
+	for i := 1; i <= 10; i++ {
+		if i % 2 == 1 {
+			continue
+		}
+
+		if i > 8 {
+			break
+		}
+
+		fmt.Println("Angka", i)
+	}
+
+	// loop on loop
+	fmt.Println("> loop on loop")
+	for i := 0; i < 5; i++ {
+		for j := i; j < 5; j++ {
+			fmt.Print(j, " ")
+		}
+		fmt.Println()
+	}
+
+	// outerloop
+	fmt.Println("> outerloop")
+	outerLoopLabel:
+	for i := 0; i < 5; i++ {
+		for j := 0; j < 5; j++ {
+			if i == 2 {
+				break outerLoopLabel
+			}
+			fmt.Print("matriks [", i, "][", j, "]", "\n")
+		}
+	}
+	fmt.Println()
+}
+
+func arrayData() {
+	fmt.Println("-> array")
+
+	// basic
+	fmt.Println("> basic")
+	var names [4]string
+	names[0] = "trafalgar"
+	names[1] = "d"
+	names[2] = "water"
+	names[3] = "law"
+	fmt.Println(names[0], names[1], names[2], names[3])
+
+	// basic
+	fmt.Println("> initial first value")
+	var fruits = [4]string{"apple", "grape", "banana", "melon"}
+	fmt.Println("Total element \t\t", len(fruits))
+	fmt.Println("Fill all element \t", fruits)
+
+	// multi dimensional array
+	fmt.Println("> multi dimensional array")
+	var numbers1 = [2][3]int{[3]int{3, 2, 3}, [3]int{3, 4, 5}}
+	var numbers2 = [2][3]int{{3, 2, 3}, {3, 4, 5}}
+	fmt.Println("numbers1", numbers1)
+	fmt.Println("numbers2", numbers2)
+
+	// looping array
+	fmt.Println("> looping array")
+	fruits = [4]string{"apple", "grape", "banana", "melon"}
+	for i := 0; i < len(fruits); i++ {
+		fmt.Printf("elemen %d : %s\n", i, fruits[i])
+	}
+	for i, fruit := range fruits {
+		fmt.Printf("elemen %d : %s\n", i, fruit)
+	}
+	for _, fruit := range fruits {
+		fmt.Printf("nama buah : %s\n", fruit)
+	}
+	fmt.Println("> make array")
+	var fruits_2 = make([]string, 2)
+	fruits_2[0] = "apple"
+	fruits_2[1] = "manggo"
+	fmt.Println(fruits_2)  // [apple manggo]
 
 	fmt.Println()
 }
