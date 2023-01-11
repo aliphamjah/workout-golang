@@ -24,13 +24,13 @@ func helloWord()  {
 	lastName = "hamjah"
 	greeting := "Selamat Pagi"
 
-    	fmt.Println("Hello ", firstName, lastName, ",", greeting)
+	fmt.Println("Hello ", firstName, lastName, ",", greeting)
 
 	fmt.Println()
 }
 
 func variable()  {
-	fmt.Println("-> variable")
+	fmt.Println("-> Variable")
 
 	// multi variable
 	var first, second, third string
@@ -48,7 +48,7 @@ func variable()  {
 }
 
 func typedata()  {
-	fmt.Println("-> type data")
+	fmt.Println("-> Type data")
 
 	var positiveNumber uint8 = 89
 	var negativeNumber = -1243423644
@@ -69,7 +69,7 @@ func typedata()  {
 }
 
 func constdata()  {
-	fmt.Println("-> const data")
+	fmt.Println("-> Const data")
 
 	const firstName string = "john"
 	fmt.Print("halo ", firstName, "!\n")
@@ -91,7 +91,7 @@ func constdata()  {
 }
 
 func operator() {
-	fmt.Println("-> operator")
+	fmt.Println("-> Operator")
 
 	// ratio
 	var value = (((2 + 6) % 3) * 4 - 2) / 3
@@ -115,7 +115,7 @@ func operator() {
 }
 
 func conditional()  {
-	fmt.Println("-> conditional")
+	fmt.Println("-> Conditional")
 	var point = 8
 
 	fmt.Println("> basic keyword")
@@ -204,7 +204,7 @@ func conditional()  {
 }
 
 func looping()  {
-	fmt.Println("-> looping")
+	fmt.Println("-> Looping")
 
 	// basic
 	fmt.Println("> basic")
@@ -270,7 +270,7 @@ func looping()  {
 }
 
 func arrayData() {
-	fmt.Println("-> array")
+	fmt.Println("-> Array")
 
 	// basic
 	fmt.Println("> basic")
@@ -316,7 +316,7 @@ func arrayData() {
 }
 
 func sliceData() {
-	fmt.Println("-> slice")
+	fmt.Println("-> Slice")
 
 	var fruits = []string{"apple", "grape", "banana", "melon"}
 	var newFruits = fruits[0:2]
@@ -394,7 +394,7 @@ func sliceData() {
 }
 
 func mapData() {
-	fmt.Println("-> map")
+	fmt.Println("-> Map")
 	var chicken map[string]int
 	chicken = map[string]int{}
 
