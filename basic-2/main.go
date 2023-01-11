@@ -34,10 +34,16 @@ func function() {
 	fmt.Printf("wide lingkaran\t\t: %.2f \n", area)
     fmt.Printf("circumference lingkaran\t: %.2f \n", circumference)
 
-	fmt.Println("> predefinedreturn value")
+	fmt.Println("> predefined return value")
     area, circumference = calculate_1(diameter)
 	fmt.Printf("wide lingkaran\t\t: %.2f \n", area)
     fmt.Printf("circumference lingkaran\t: %.2f \n", circumference)
+
+	fmt.Println("> variadic")
+	var avg = calculate_2(2, 4, 3, 5, 4, 3, 3, 5, 5, 3)
+    var msg = fmt.Sprintf("Average : %.2f", avg)
+    fmt.Println(msg)
+
 
 	fmt.Println()
 }
@@ -67,4 +73,14 @@ func calculate_1(d float64) (area float64, circumference float64) {
     circumference = math.Pi * d
 
     return
+}
+
+func calculate_2(numbers... int) float64 {
+    var total int = 0
+    for _, number := range numbers {
+        total += number
+    }
+
+    var avg = float64(total) / float64(len(numbers))
+    return avg
 }
