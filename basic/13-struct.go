@@ -58,6 +58,14 @@ func main() {
 	fmt.Println()
 	fmt.Println("> filling sub-struct")
 	fillingSubStruct()
+
+	fmt.Println()
+	fmt.Println("> anonymous struct")
+	anonymousStruct()
+
+	fmt.Println()
+	fmt.Println("> anonymous slice struct")
+	anonymousSliceStruct()
 }
 
 func pointerObject() {
@@ -92,4 +100,50 @@ func fillingSubStruct() {
 	fmt.Println("name  :", s1.name)
 	fmt.Println("age   :", s1.age)
 	fmt.Println("grade :", s1.grade)
+}
+
+func anonymousStruct() {
+	// anonymous struct without property
+	var s1 = struct {
+		person
+        grade int
+	}{}
+
+	// anonymous struct with property
+	var s2 = struct {
+		person
+		grade int
+	}{
+		person: person{"wick", 21},
+		grade:  2,
+	}
+
+    s1.person = person{"wick", 21}
+    s1.grade = 2
+    s2.person = person{"john", 21}
+    s2.grade = 3
+
+    fmt.Println("1")
+    fmt.Println("name  :", s1.person.name)
+    fmt.Println("age   :", s1.person.age)
+    fmt.Println("grade :", s1.grade)
+    fmt.Println("2")
+    fmt.Println("name  :", s2.person.name)
+    fmt.Println("age   :", s2.person.age)
+    fmt.Println("grade :", s2.grade)
+}
+
+func anonymousSliceStruct()  {
+	var allStudents = []struct {
+		person
+		grade int
+	}{
+		{person: person{"wick", 21}, grade: 2},
+		{person: person{"ethan", 22}, grade: 3},
+		{person: person{"bond", 21}, grade: 3},
+	}
+
+	for _, student := range allStudents {
+		fmt.Println(student)
+	}
 }
